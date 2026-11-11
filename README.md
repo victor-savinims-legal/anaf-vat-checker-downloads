@@ -1,42 +1,51 @@
 # Verificare TVA
 
-Made by SAVI-NIMS
+Made by **SAVI-NIMS**
 
-Aplicație desktop pentru verificarea TVA și a inactivității fiscale la ANAF. Companii românești, până la 100 de rânduri per fișier Excel. Interfață în limba română.
+[Română](#română) · [English](#english) · [Installation / Instalare](INSTALLARE.md)
 
-## Descărcare
-
-| Fișier | Link permanent către versiunea curentă |
+| Platform / Platformă | Download / Descarcă |
 |---|---|
-| Windows 10/11 x64 | [Descarcă aplicația Windows](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/VerificareTVA-Windows-x64.zip) |
-| Mac Apple Silicon | [Descarcă aplicația Mac](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/VerificareTVA-Mac-AppleSilicon.dmg) |
-| Șablon Excel gol | [Descarcă șablonul](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/Model_Import_Companii.xlsx) |
-| Pagina versiunii | [Ultima versiune și verificările pachetelor](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest) |
+| Windows 10/11 x64 | [Windows ZIP](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/VerificareTVA-Windows-x64.zip) |
+| Mac Apple Silicon, macOS 13+ | [Mac DMG](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/VerificareTVA-Mac-AppleSilicon.dmg) |
+| Excel template / Șablon Excel | [Model_Import_Companii.xlsx](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/Model_Import_Companii.xlsx) |
 
-Nu este necesar un cont GitHub pentru descărcare. Folosiți linkurile de mai sus. Arhivele „Source code” generate automat de GitHub conțin numai documentația acestui repository.
+[Latest release / Ultima versiune](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest)
 
-## Pornire
+## Română
 
-**Windows:** extrageți complet ZIP-ul, rulați `Test instalare.cmd`, apoi `VerificareTVA.exe`. Păstrați subdosarul `_internal` alături de executabil.
+Aplicație desktop pentru verificarea **înregistrării TVA și a inactivității fiscale ANAF** a companiilor românești. Încărcați un Excel cu **Denumire societate** și **CUI**, maximum 100 de companii per foaie. Exportați un raport colorat, cu **COMENTARII** pentru date lipsă și diferențe de denumire.
 
-**Mac:** deschideți DMG-ul și copiați `VerificareTVA.app` în Applications. Este necesar un Mac cu procesor Apple Silicon și macOS 13 sau ulterior.
+Descărcarea este gratuită, fără cont GitHub. Interfața aplicației este în română. Nu trebuie instalate Python sau Excel pentru rularea aplicației.
 
-**Excel:** completați șablonul cu doar `Denumire societate` și `CUI`, de la rândul 2. Salvați o copie `.xlsx`, încărcați-o în aplicație și apăsați **Verifică la ANAF**. Sunt acceptate până la 100 de rânduri de societăți. Nu sunt necesare alte coloane.
+**Windows:** extrageți complet ZIP-ul, rulați `Test instalare.cmd`, apoi `VerificareTVA.exe`. Păstrați dosarul `_internal` alături de executabil. **Mac:** deschideți DMG-ul și copiați `VerificareTVA.app` în Applications. Pachetul este doar pentru Apple Silicon.
 
-Pachetele includ runtime-ul. Nu trebuie instalat Python. Microsoft Excel nu este necesar pentru import/export, dar puteți folosi Excel sau alt editor compatibil pentru completarea șablonului.
+**Avertizări de securitate:** versiunea nu are semnare comercială Windows sau notarizare Apple. Pentru avertizarea SmartScreen de aplicație nerecunoscută: **More info → Run anyway**, numai dacă aveți încredere în sursă și opțiunea este disponibilă. Pe Mac, după blocarea dezvoltatorului neverificat: **System Settings → Privacy & Security → Open Anyway**, dacă alegeți să autorizați aplicația.
 
-[Instrucțiuni de instalare și utilizare](INSTALLARE.md)
+**Nu ignorați alertele de malware sau fișiere deteriorate.** Dacă Smart App Control sau politica organizației blochează rularea, consultați IT. Nu dezactivați protecțiile sistemului. [Instrucțiuni complete în română](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#română).
 
-## Semnare și verificare
+Excelul original rămâne nemodificat. Doar CUI și data verificării ajung la ANAF. Salvați local `Raport_TVA.xlsx` și `Dovezi_ANAF.json`. Verificarea nu acoperă ONRC sau tratamentul fiscal al tranzacției.
 
-Windows nu are certificat comercial. Mac are semnătură ad-hoc, fără notarizare Apple. Verificați hash-urile din `SHA256SUMS.txt` și respectați politica IT pentru eventualele avertizări SmartScreen/Gatekeeper. Nu dezactivați global protecțiile sistemului.
+## English
 
-Testele automate sunt executate pe Windows Server 2025 x64 și macOS 15 ARM64. Configurația și rețeaua utilizatorului trebuie validate separat. Dovezile pentru versiunea curentă sunt atașate pe pagina release-ului în `VALIDATION.json`.
+A desktop app that checks **ANAF VAT registration and fiscal inactivity** for Romanian companies. Upload an Excel file with **Denumire societate** (company name) and **CUI** (Romanian tax identifier), for up to 100 companies per sheet. Export a colour-coded report with **COMENTARII** (comments) for missing information and company-name differences.
 
-## Date și actualizări
+Free download, with no GitHub account required. The app interface is in Romanian. Python and Excel are not required to run it.
 
-Excelul original rămâne nemodificat. Doar CUI-ul și data sunt trimise la ANAF. Rapoartele se salvează local la cererea utilizatorului și includ date despre clienți. Rezultatul nu stabilește tratamentul fiscal al tranzacției și nu verifică ONRC.
+**Windows:** extract the whole ZIP, run `Test instalare.cmd`, then open `VerificareTVA.exe`. Keep the `_internal` folder beside the executable. **Mac:** open the DMG and copy `VerificareTVA.app` into Applications. This package is for Apple Silicon only.
 
-Linkurile de descărcare rămân identice când se publică o versiune nouă. Aplicația instalată nu se actualizează automat. Descărcați și instalați noul pachet pentru actualizare.
+**Security warnings:** this release has no commercial Windows signing or Apple notarization. For an unrecognized-app SmartScreen warning: **More info → Run anyway**, only if you trust the source and the option is available. On Mac, after a launch blocked because the developer is unverified: **System Settings → Privacy & Security → Open Anyway**, if you choose to authorize the app.
 
-Acest repository public distribuie pachetele și documentația. Repository-ul sursei aplicației este separat și privat. Se păstrează o singură versiune publicată pentru descărcare.
+**Do not dismiss malware or damaged-file alerts.** If Smart App Control or an organization policy blocks execution, contact IT. Do not disable system protection. [Full English instructions](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#english).
+
+The original Excel stays unchanged. Only CUI and the check date go to ANAF. Save `Raport_TVA.xlsx` and `Dovezi_ANAF.json` locally. Scope excludes ONRC checks and transaction tax treatment.
+
+## Releases / Versiuni
+
+Linkurile permanente indică ultima versiune publicată. Aplicația nu se actualizează automat. / Permanent links point to the latest published release. The app does not update automatically.
+
+Codul sursă rămâne privat. Acest repository conține documentație și descărcări. Arhivele „Source code” generate de GitHub conțin doar documentația, nu aplicația. / The app source remains private. This repository contains documentation and downloads. GitHub's automatic “Source code” archives contain documentation, not the app.
+
+[SHA256SUMS.txt](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/SHA256SUMS.txt) · [VALIDATION.json](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest/download/VALIDATION.json)
+
+Ghidul detaliat include documentația oficială Microsoft și Apple. / The detailed guide links to official Microsoft and Apple guidance.
