@@ -14,6 +14,8 @@ Made by **SAVI-NIMS**
 
 ## Română
 
+**Nou în 1.0.4:** pe prima pagină puteți verifica o singură societate prin **CUI (recomandat)** sau **denumire**, în două câmpuri distincte. Pentru denumire, CUIScan oferă o listă de identificare, alegeți explicit societatea, apoi verificarea fiscală se face direct la ANAF. Importul Excel rămâne disponibil. [Instrucțiuni de căutare și instalare](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#română).
+
 Aplicație desktop pentru verificarea **înregistrării TVA și a inactivității fiscale ANAF** a companiilor românești. Încărcați un Excel cu **Denumire societate** și **CUI**, maximum 100 de companii per foaie. Exportați un raport colorat, cu **COMENTARII** pentru date lipsă și diferențe de denumire.
 
 Descărcarea este gratuită, fără cont GitHub. Interfața aplicației este în română. Nu trebuie instalate Python sau Excel pentru rularea aplicației.
@@ -27,6 +29,8 @@ Descărcarea este gratuită, fără cont GitHub. Interfața aplicației este în
 Excelul original rămâne nemodificat. Doar CUI și data verificării ajung la ANAF. Salvați local `Raport_TVA.xlsx` și `Dovezi_ANAF.json`. Verificarea nu acoperă ONRC sau tratamentul fiscal al tranzacției.
 
 ## English
+
+**New in 1.0.4:** the home screen has separate **CUI (recommended)** and **company name** fields for one-company checks. Name search uses CUIScan to find candidate identities. You explicitly select the company before a direct ANAF fiscal check. Excel import remains available. [Search and installation instructions](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#english).
 
 A desktop app that checks **ANAF VAT registration and fiscal inactivity** for Romanian companies. Upload an Excel file with **Denumire societate** (company name) and **CUI** (Romanian tax identifier), for up to 100 companies per sheet. Export a colour-coded report with **COMENTARII** (comments) for missing information and company-name differences.
 

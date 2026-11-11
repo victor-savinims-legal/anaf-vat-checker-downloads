@@ -1,4 +1,4 @@
-# Verificare TVA 1.0.3: instalare / installation
+# Verificare TVA 1.0.4: instalare / installation
 
 Made by **SAVI-NIMS**
 
@@ -51,6 +51,17 @@ Denumirile diferă în funcție de limba și versiunea macOS. Butonul poate apă
 
 **Opriți-vă dacă mesajul spune „will damage your computer”, indică malware sau spune că aplicația este deteriorată.** Pentru un fișier deteriorat, descărcați din nou din sursa oficială și comparați SHA256. Dacă problema persistă, solicitați verificarea pachetului. Nu folosiți comenzi pentru eliminarea carantinei sau dezactivarea Gatekeeper.
 
+### Căutare manuală după CUI sau denumire
+
+Pe prima pagină sunt două câmpuri distincte. Este suficientă oricare dintre metode, fără fișier Excel. **Recomandăm CUI-ul** pentru identificare exactă.
+
+- **CUI:** introduceți codul, cu sau fără RO, și apăsați **Verifică CUI**. Cererea merge direct la ANAF. Rezultatul afișează denumirea returnată de ANAF.
+- **Denumire societate:** introduceți minimum două caractere și apăsați **Caută denumirea**. Denumirea este trimisă către serviciul extern **CUIScan**, pentru identificare. Alegeți explicit societatea după denumire, CUI, județ și localitate, apoi **Verifică firma aleasă la ANAF**. Chiar și o singură potrivire trebuie selectată.
+- Dacă numele selectat diferă de denumirea ANAF, ambele apar în **COMENTARII**. Căutarea după denumire nu stabilește statutul TVA. Verificarea fiscală folosește exclusiv răspunsul direct ANAF.
+- Puteți salva același raport Excel și dovezile JSON. Acestea înregistrează metoda de identificare și, după caz, denumirea căutată și societatea selectată.
+
+CUIScan este o sursă terță de identificare. Rezultatele sale pot fi incomplete sau neactualizate. API-ul public documentează maximum 30 de rezultate și 100 de cereri/oră/IP, inclusiv calculatoarele care împart același IP. La indisponibilitate sau limitare, folosiți CUI-ul direct. Aplicația nu trimite către CUIScan fișierul Excel sau căutările făcute prin câmpul CUI. [API](https://cuiscan.ro/api-docs.html), [confidențialitate](https://cuiscan.ro/confidentialitate.html).
+
 ### Excel și utilizare
 
 Șablonul are foaia **Companii** și exact două coloane. Păstrați aceste antete:
@@ -67,7 +78,7 @@ Completați de la rândul 2, maximum 100 de rânduri de companii per foaie. CUI 
 
 | Culoare | Semnificație |
 |---|---|
-| Verde | Înregistrare TVA, fără inactivitate fiscală, cu date complete și denumire concordantă. |
+| Verde | Înregistrare TVA, fără inactivitate fiscală, cu date complete și denumire concordantă dacă a fost furnizată. |
 | Roșu | CUI absent/neacceptat, inactivitate fiscală sau anulare TVA confirmată. Citiți motivul. |
 | Galben | Date/denumire de verificat ori lipsa înregistrării TVA fără anulare confirmată. |
 | Gri | Răspuns ANAF indisponibil, incomplet, neconcordant sau CUI negăsit. Nu confirmă un status fiscal. |
@@ -89,7 +100,7 @@ Pentru IT:
 - Testați importul fără date confidențiale: un CUI cunoscut, unul lipsă și o denumire diferită. Comparați rezultatul cu ANAF pentru aceeași dată.
 - Verificați exportul ambelor fișiere și faptul că Excelul original rămâne nemodificat. Lipsa rețelei nu trebuie să producă un rezultat verde.
 - Pentru proxy/certificate folosiți configurația aprobată de IT. Nu dezactivați verificarea TLS. Endpoint: `https://webservicesp.anaf.ro/api/PlatitorTvaRest/v9/tva`, HTTPS POST, port 443.
-- Testele automate 1.0.3 au rulat pe Windows Server 2025 x64 și macOS 15 ARM64. Nu certifică fiecare configurație Windows 10/11 sau Mac. Dovezile sunt în `VALIDATION.json` din release.
+- Testele automate 1.0.4 au rulat pe Windows Server 2025 x64 și macOS 15 ARM64. Nu certifică fiecare configurație Windows 10/11 sau Mac. Dovezile sunt în `VALIDATION.json` din release.
 
 ## English
 
@@ -136,6 +147,17 @@ Labels vary by macOS version and language. The button may appear only after a re
 
 **Stop if the warning says “will damage your computer”, reports malware, or says the app is damaged.** For a damaged download, download again from the official source and compare SHA256. If it persists, request a package review. Do not run commands to remove quarantine or disable Gatekeeper.
 
+### Manual search by CUI or company name
+
+The home screen has two separate fields. Either method works without an Excel file. **CUI is recommended** for exact identification.
+
+- **CUI:** enter the tax identifier, with or without RO, and select **Verifică CUI** (Check CUI). The request goes directly to ANAF. The result displays the company name returned by ANAF.
+- **Denumire societate:** enter at least two characters and select **Caută denumirea** (Search name). The name is sent to the external **CUIScan** service for identification. Explicitly select the company using its name, CUI, county and locality, then **Verifică firma aleasă la ANAF** (Check selected company with ANAF). Even a single match requires selection.
+- If the selected name differs from ANAF's name, **COMENTARII** shows both. Name discovery does not determine VAT status. Fiscal results come exclusively from the direct ANAF response.
+- Save the same Excel report and JSON evidence. These record the identification method and, where applicable, the search term and selected company.
+
+CUIScan is a third-party identity source. Its results may be incomplete or out of date. Its public API documents up to 30 results and 100 requests/hour/IP, shared by devices using the same public IP. If unavailable or limited, use CUI directly. The app does not send the workbook or CUI-field searches to CUIScan. [API](https://cuiscan.ro/api-docs.html), [privacy](https://cuiscan.ro/confidentialitate.html).
+
 ### Excel input and use
 
 The template contains the **Companii** sheet and exactly two columns. Keep these Romanian headers:
@@ -154,7 +176,7 @@ The app interface is in Romanian:
 
 | Colour | Meaning |
 |---|---|
-| Green | VAT registered, not fiscally inactive, with complete data and a matching name. |
+| Green | VAT registered, not fiscally inactive, with complete data and a matching name when supplied. |
 | Red | Missing/unaccepted CUI, fiscal inactivity or confirmed VAT cancellation. Read the reason. |
 | Yellow | Data/name needs review, or not VAT registered without confirmed cancellation. |
 | Grey | ANAF response unavailable, incomplete, inconsistent, or CUI not found. No fiscal status is confirmed. |
@@ -176,7 +198,7 @@ For IT:
 - Test import without confidential data: a known CUI, a missing CUI and a different company name. Compare results against ANAF for the same date.
 - Check both output files export and the original Excel remains unchanged. An unavailable network must not produce a green result.
 - Use IT-approved proxy/certificate configuration. Keep TLS verification enabled. Endpoint: `https://webservicesp.anaf.ro/api/PlatitorTvaRest/v9/tva`, HTTPS POST, port 443.
-- Version 1.0.3 automated tests ran on Windows Server 2025 x64 and macOS 15 ARM64. They do not certify every Windows 10/11 or Mac configuration. See the release's `VALIDATION.json`.
+- Version 1.0.4 automated tests ran on Windows Server 2025 x64 and macOS 15 ARM64. They do not certify every Windows 10/11 or Mac configuration. See the release's `VALIDATION.json`.
 
 ## SHA256: verificare opțională / optional verification
 
