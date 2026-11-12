@@ -14,7 +14,7 @@ Made by **SAVI-NIMS**
 
 ## Română
 
-**Nou în 1.0.4:** pe prima pagină puteți verifica o singură societate prin **CUI (recomandat)** sau **denumire**, în două câmpuri distincte. Pentru denumire, CUIScan oferă o listă de identificare, alegeți explicit societatea, apoi verificarea fiscală se face direct la ANAF. Importul Excel rămâne disponibil. [Instrucțiuni de căutare și instalare](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#română).
+**Nou în 2.0.1:** două instrumente distincte: **Verificare TVA** pentru verificarea fiscală rapidă și **Raport companie / CUI** pentru un raport detaliat din datele publice ANAF. Introduceți **CUI-ul (recomandat)** sau căutați denumirea și alegeți explicit societatea. Raportul include profilul companiei, registre fiscale, bilanțuri multianuale, grafice, explicații ușor de înțeles și export **PDF + Excel + dovezi JSON**. [Instrucțiuni](INSTALLARE.md#română).
 
 Aplicație desktop pentru verificarea **înregistrării TVA și a inactivității fiscale ANAF** a companiilor românești. Încărcați un Excel cu **Denumire societate** și **CUI**, maximum 100 de companii per foaie. Exportați un raport colorat, cu **COMENTARII** pentru date lipsă și diferențe de denumire.
 
@@ -26,11 +26,11 @@ Descărcarea este gratuită, fără cont GitHub. Interfața aplicației este în
 
 **Nu ignorați alertele de malware sau fișiere deteriorate.** Dacă Smart App Control sau politica organizației blochează rularea, consultați IT. Nu dezactivați protecțiile sistemului. [Instrucțiuni complete în română](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#română).
 
-Excelul original rămâne nemodificat. Doar CUI și data verificării ajung la ANAF. Salvați local `Raport_TVA.xlsx` și `Dovezi_ANAF.json`. Verificarea nu acoperă ONRC sau tratamentul fiscal al tranzacției.
+Excelul original rămâne nemodificat. La ANAF ajung CUI, data fiscală și anii bilanțurilor solicitați. Fluxul TVA salvează `Raport_TVA.xlsx` și dovezi JSON. Raportul detaliat salvează `Raport_Companie.pdf`, `Raport_Companie.xlsx` și dovezi JSON. Denumirea este transmisă CUIScan numai când alegeți această metodă de identificare. Datele lipsă sunt marcate explicit. Aplicația nu face verificare directă ONRC și nu stabilește tratamentul TVA al tranzacției.
 
 ## English
 
-**New in 1.0.4:** the home screen has separate **CUI (recommended)** and **company name** fields for one-company checks. Name search uses CUIScan to find candidate identities. You explicitly select the company before a direct ANAF fiscal check. Excel import remains available. [Search and installation instructions](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#english).
+**New in 2.0.1:** two distinct workflows: **Verificare TVA** for quick fiscal checks and **Raport companie / CUI** for a detailed report using public ANAF data. Enter the **CUI (recommended)** or search by name and explicitly select the company. The report includes a company profile, fiscal registers, multiyear financial data, charts, plain-language explanations and **PDF + Excel + JSON evidence** export. [Instructions](INSTALLARE.md#english).
 
 A desktop app that checks **ANAF VAT registration and fiscal inactivity** for Romanian companies. Upload an Excel file with **Denumire societate** (company name) and **CUI** (Romanian tax identifier), for up to 100 companies per sheet. Export a colour-coded report with **COMENTARII** (comments) for missing information and company-name differences.
 
@@ -42,7 +42,9 @@ Free download, with no GitHub account required. The app interface is in Romanian
 
 **Do not dismiss malware or damaged-file alerts.** If Smart App Control or an organization policy blocks execution, contact IT. Do not disable system protection. [Full English instructions](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/blob/main/INSTALLARE.md#english).
 
-The original Excel stays unchanged. Only CUI and the check date go to ANAF. Save `Raport_TVA.xlsx` and `Dovezi_ANAF.json` locally. Scope excludes ONRC checks and transaction tax treatment.
+The original Excel stays unchanged. ANAF receives the CUI, fiscal date and requested financial years. VAT checks save `Raport_TVA.xlsx` and JSON evidence. Detailed reports save `Raport_Companie.pdf`, `Raport_Companie.xlsx` and JSON evidence. Names go to CUIScan only when that identification method is used. Missing data is explicitly marked. The app does not directly query ONRC or determine a transaction’s VAT treatment.
+
+![Interfața aplicației: verificare TVA și raport companie](assets/interfata-2.0.1.png)
 
 ## Releases / Versiuni
 
