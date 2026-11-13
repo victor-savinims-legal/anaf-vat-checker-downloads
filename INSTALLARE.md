@@ -1,10 +1,10 @@
-# Verificare TVA 2.0.1: instalare / installation
+# Verificare TVA 2.0.2: instalare / installation
 
 Made by **SAVI-NIMS**
 
 [Română](#română) · [English](#english) · [Descărcări / Downloads](https://github.com/victor-savinims-legal/anaf-vat-checker-downloads/releases/latest)
 
-Actualizat la 12 noiembrie 2026. / Updated 12 November 2026.
+Actualizat la 13 noiembrie 2026. / Updated 13 November 2026.
 
 ## Română
 
@@ -53,12 +53,12 @@ Denumirile diferă în funcție de limba și versiunea macOS. Butonul poate apă
 
 ### Două moduri de lucru
 
-- **Verificare TVA**: verificare rapidă a TVA și inactivității fiscale, după CUI/denumire sau prin Excel cu până la 100 de societăți. Exportul rămâne `Raport_TVA.xlsx` + dovezi JSON.
-- **Raport companie / CUI**: raport detaliat pentru o singură societate, identificată prin CUI (recomandat) sau prin denumire și selecție explicită. Se colectează datele publice ANAF de identificare, înregistrare fiscală, RO e-Factura și raportările financiare anuale disponibile.
+- **Verificare TVA**: verificare rapidă a TVA și inactivității fiscale, după CUI sau prin Excel cu până la 100 de societăți. Exportul rămâne `Raport_TVA.xlsx` + dovezi JSON.
+- **Raport companie / CUI**: raport detaliat pentru o singură societate, identificată prin CUI. Se colectează datele publice ANAF de identificare, înregistrare fiscală, RO e-Factura și raportările financiare anuale disponibile.
 
 ### Raport companie: PDF și Excel
 
-1. Deschideți secțiunea **Raport companie / CUI** și introduceți CUI-ul sau căutați denumirea. La căutarea după denumire, alegeți firma după CUI, județ și localitate.
+1. Deschideți secțiunea **Raport companie / CUI** și introduceți CUI-ul societății.
 2. Alegeți data de referință fiscală (implicit astăzi, fără date viitoare) și intervalul bilanțurilor. Implicit sunt ultimii cinci ani calendaristici încheiați. Datele financiare pot lipsi pentru unii ani.
 3. Porniți colectarea și urmăriți progresul. Datele sunt solicitate pe rând, cu respectarea limitelor ANAF. O indisponibilitate este afișată separat și nu devine un rezultat fiscal negativ.
 4. Salvați raportul într-un dosar ales. Aplicația creează un subdosar nou cu **Raport_Companie.pdf**, **Raport_Companie.xlsx** și **Dovezi_ANAF.json**. Deschideți PDF-ul, Excel-ul sau dosarul din butoanele dedicate.
@@ -67,17 +67,13 @@ Raportul include grafice multianuale, valori exacte, explicații „Cum citim ac
 
 **Citiți perioadele:** statutul fiscal privește data selectată, bilanțurile privesc anii indicați, iar datele generale nu sunt garantate ca instantanee istorice. Lipsa datelor nu este zero și nu dovedește că societatea nu a depus bilanț. Datoriile agregate nu înseamnă datorii fiscale restante. Registrul RO e-Factura nu furnizează facturile societății. Raportul nu stabilește tratamentul TVA al tranzacției.
 
-### Căutare manuală după CUI sau denumire
+### Căutare manuală după CUI
 
-Pe prima pagină sunt două câmpuri distincte. Este suficientă oricare dintre metode, fără fișier Excel. **Recomandăm CUI-ul** pentru identificare exactă.
+Introduceți CUI-ul, cu sau fără RO, și apăsați **Verifică CUI**. Cererea merge direct la ANAF, iar rezultatul afișează denumirea returnată de ANAF. Puteți salva raportul Excel și dovezile JSON.
 
-- **CUI:** introduceți codul, cu sau fără RO, și apăsați **Verifică CUI**. Cererea merge direct la ANAF. Rezultatul afișează denumirea returnată de ANAF.
-- **Denumire societate:** introduceți minimum două caractere și apăsați **Caută denumirea**. Denumirea este trimisă către serviciul extern **CUIScan**, pentru identificare. Alegeți explicit societatea după denumire, CUI, județ și localitate, apoi **Verifică firma aleasă la ANAF**. Chiar și o singură potrivire trebuie selectată.
-- Dacă numele selectat diferă de denumirea ANAF, ambele apar în **COMENTARII**. Căutarea după denumire nu stabilește statutul TVA. Verificarea fiscală folosește exclusiv răspunsul direct ANAF.
-- Puteți salva același raport Excel și dovezile JSON. Acestea înregistrează metoda de identificare și, după caz, denumirea căutată și societatea selectată.
+Pentru verificarea în lot, încărcați Excelul cu **Denumire societate** și **CUI**, maximum 100 de companii. Denumirea din Excel servește numai comparației cu datele ANAF. Nu înlocuiește CUI-ul și nu este utilizată pentru o căutare externă.
 
-CUIScan este o sursă terță de identificare. Rezultatele sale pot fi incomplete sau neactualizate. API-ul public documentează maximum 30 de rezultate și 100 de cereri/oră/IP, inclusiv calculatoarele care împart același IP. La indisponibilitate sau limitare, folosiți CUI-ul direct. Aplicația nu trimite către CUIScan fișierul Excel sau căutările făcute prin câmpul CUI. [API](https://cuiscan.ro/api-docs.html), [confidențialitate](https://cuiscan.ro/confidentialitate.html).
-
+Raportul detaliat al unei companii se generează individual, prin CUI, din secțiunea **Raport companie / CUI**.
 ### Excel și utilizare
 
 Șablonul are foaia **Companii** și exact două coloane. Păstrați aceste antete:
@@ -166,12 +162,12 @@ Labels vary by macOS version and language. The button may appear only after a re
 
 ### Two distinct workflows
 
-- **Verificare TVA** (VAT check): quick VAT and fiscal inactivity checks by CUI/name or an Excel list of up to 100 companies. Export remains `Raport_TVA.xlsx` plus JSON evidence.
-- **Raport companie / CUI** (Company report): a detailed report for one company identified by CUI (recommended), or by name followed by explicit company selection. It retrieves public ANAF identification, fiscal registration, RO e-Factura registry and available annual financial information.
+- **Verificare TVA** (VAT check): quick VAT and fiscal inactivity checks by CUI or an Excel list of up to 100 companies. Export remains `Raport_TVA.xlsx` plus JSON evidence.
+- **Raport companie / CUI** (Company report): a detailed report for one company identified by CUI. It retrieves public ANAF identification, fiscal registration, RO e-Factura registry and available annual financial information.
 
 ### Company report: PDF and Excel
 
-1. Open **Raport companie / CUI**, enter the CUI or search by company name. When searching by name, select the correct company using its CUI, county and locality.
+1. Open **Raport companie / CUI**, enter the company CUI.
 2. Choose the fiscal reference date (today by default, never a future date) and financial year range. The default is the last five completed calendar years. Some financial years may be unavailable.
 3. Start collection and follow progress. Requests are sequential and rate limited. An unavailable source is shown separately, never as a negative fiscal finding.
 4. Save to a folder you choose. A new subfolder contains **Raport_Companie.pdf**, **Raport_Companie.xlsx** and **Dovezi_ANAF.json**. Dedicated buttons open the PDF, workbook or output folder.
@@ -180,17 +176,13 @@ The report contains multiyear charts, exact values, plain-language explanation b
 
 **Check the dates:** fiscal status uses the selected date, financial figures belong to their stated years, and general identification fields are not guaranteed historical snapshots. Missing data is not zero and is not proof of a missing filing. Aggregate liabilities are not tax arrears. The RO e-Factura registry does not provide the company's invoices. The report does not determine a transaction's VAT treatment.
 
-### Manual search by CUI or company name
+### Manual lookup by CUI
 
-The home screen has two separate fields. Either method works without an Excel file. **CUI is recommended** for exact identification.
+Enter the CUI, with or without RO, and select **Verifică CUI** (Check CUI). The request goes directly to ANAF and the result displays ANAF's company name. Save the Excel report and JSON evidence.
 
-- **CUI:** enter the tax identifier, with or without RO, and select **Verifică CUI** (Check CUI). The request goes directly to ANAF. The result displays the company name returned by ANAF.
-- **Denumire societate:** enter at least two characters and select **Caută denumirea** (Search name). The name is sent to the external **CUIScan** service for identification. Explicitly select the company using its name, CUI, county and locality, then **Verifică firma aleasă la ANAF** (Check selected company with ANAF). Even a single match requires selection.
-- If the selected name differs from ANAF's name, **COMENTARII** shows both. Name discovery does not determine VAT status. Fiscal results come exclusively from the direct ANAF response.
-- Save the same Excel report and JSON evidence. These record the identification method and, where applicable, the search term and selected company.
+For batch VAT checks, upload an Excel file with **Denumire societate** and **CUI**, up to 100 companies. The Excel company name is used only for comparison with ANAF. It does not replace the CUI and is not used for an external search.
 
-CUIScan is a third-party identity source. Its results may be incomplete or out of date. Its public API documents up to 30 results and 100 requests/hour/IP, shared by devices using the same public IP. If unavailable or limited, use CUI directly. The app does not send the workbook or CUI-field searches to CUIScan. [API](https://cuiscan.ro/api-docs.html), [privacy](https://cuiscan.ro/confidentialitate.html).
-
+Detailed company reports are generated individually by CUI from **Raport companie / CUI**.
 ### Excel input and use
 
 The template contains the **Companii** sheet and exactly two columns. Keep these Romanian headers:
@@ -258,4 +250,4 @@ Licențele bibliotecilor sunt în `THIRD_PARTY_NOTICES.md` și `licenses` din ru
 
 ### Conexiuni pentru raport / Report connections
 
-HTTPS port 443: `webservicesp.anaf.ro/api/PlatitorTvaRest/v9/tva` (POST), `webservicesp.anaf.ro/api/registruroefactura/v1/interogare` (POST), `webservicesp.anaf.ro/bilant` (GET, CUI + an/year). Căutarea după denumire / Name discovery: `cuiscan.ro/api.php`. Fără credențiale SPV / No SPV credentials.
+HTTPS port 443: `webservicesp.anaf.ro/api/PlatitorTvaRest/v9/tva` (POST), `webservicesp.anaf.ro/api/registruroefactura/v1/interogare` (POST), `webservicesp.anaf.ro/bilant` (GET, CUI + an/year). Fără credențiale SPV / No SPV credentials.
